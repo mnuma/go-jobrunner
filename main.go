@@ -17,7 +17,7 @@ func main() {
 	e := echo.New()
 	e.Use(mw.Logger())
 	e.Use(mw.Recover())
-	
+
 	e.GET("/status", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, jobrunner.StatusJson())
 	})
